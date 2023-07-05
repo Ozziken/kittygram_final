@@ -6,7 +6,7 @@ volumes:
   media:
 
 services:
-  db:
+  db_kitty:
     container_name: db
     image: postgres:13
     env_file: .env
@@ -14,7 +14,7 @@ services:
       - pg_data:/var/lib/postgresql/data
   backend:
     depends_on:
-      - db
+      - db_kitty
     container_name: backend
     image: ozziken/kittygram_backend
     env_file: .env
