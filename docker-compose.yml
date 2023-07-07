@@ -16,7 +16,6 @@ services:
     depends_on:
       - db_kitty
     container_name: backend
-#    image: ozziken/kittygram_backend
     build: ./backend/
     env_file: .env
     volumes:
