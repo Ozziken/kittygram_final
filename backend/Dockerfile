@@ -10,4 +10,6 @@ COPY . .
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD ["gunicorn", "--bind", "0.0.0.0:9000", "kittygram_backend.wsgi"]
